@@ -1,0 +1,13 @@
+chameleon
+crypto_pyaes
+deepcopy
+docutils
+float
+go
+hexiom
+json_dumps,json_loads
+logging
+mdp
+nqueens
+pidigits
+nbody
