@@ -2,7 +2,7 @@
 BENCH_SRC="benches"
 BENCH_MANIFEST="$BENCH_SRC/MANIFEST"
 
-printf "[benchmark]\n\n" > $BENCH_MANIFEST
+printf "[benchmarks]\n\n" > $BENCH_MANIFEST
 printf "name\tmetafile\n" >> $BENCH_MANIFEST
 
 for f in "$BENCH_SRC"/*; do

@@ -9,27 +9,14 @@ cd ..
 #Update the temperature value
 cd Utils/
 python3 temperatureUpdate.py
-
-#Update the number of times the program will run on each case TODO PRECISO ATUALIZAR ISTO PARA TODOS OS PROGRAMAS
-# for program in "../ex1"/*; do
-#     if [ -d "$program" ]; then
-#         makefile_path="$program/Makefile"
-#         if [ -f "$makefile_path" ]; then
-#             python3 ntimesUpdate.py "$NTIMES" "$makefile_path"
-#         else
-#             echo "Makefile not found: $makefile_path"
-#         fi
-#     fi
-# done
 cd ..
 
-# TODO Fazer drop das colunas GPU,DRAM e Language?
 echo "Language,Program,PowerLimit,Package,Core,GPU,DRAM,Time,Temperature,Memory" > measurementsGlobal.csv
 
-pwd
+# NOTE: TEST best powercaps for laptop fib with various powercaps
 
 # Loop over power limit values o (-1) é sem powercap
-MANIFEST="benches/MANIFEST"
+PY_PATH=$(~/.miniconda3/bin/python3.11)
 for limit in -1 2 5 10 25 50
     do
     cd Utils/
@@ -41,21 +28,16 @@ for limit in -1 2 5 10 25 50
     make
     cd ..
 
-    #TODO Fazer append do size do array e talvez do comando de compile (para as flags de compile), e mudar o resto
-    # program="ex1/"
-    for program in "benches"/*; do
-        if [ -d "$program" ]; then
-            command_to_run="pyperformance -m $MANIFEST -b $program"
+    while read -r program; do
+        command_to_run="pyperformance run -b $program --python=$PY_PATH"
 
-            sudo modprobe msr
-            sudo ./RAPL/main "$command_to_run" Python BubbleSort "$NTIMES"
+        sudo modprobe msr
+        sudo ./RAPL/main "$command_to_run" Python "$program" "$NTIMES"
 
-            # Specify the input file name
-            file="measurements.csv"
-            tail -n +2 "$file" >> ../../measurementsGlobal.csv;
-            cd ../../
-        fi
-    done
+        # Specify the input file name
+        file="measurements.csv"
+        tail -n +2 "$file" >> measurementsGlobal.csv;
+    done < benches_to_run
 
 done
 

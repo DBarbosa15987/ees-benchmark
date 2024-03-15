@@ -5,7 +5,8 @@ docutils
 float
 go
 hexiom
-json_dumps,json_loads
+json_dumps
+json_loads
 logging
 mdp
 nqueens
