@@ -19,6 +19,9 @@ echo "Language,Program,PowerLimit,Package,Core,GPU,DRAM,Time,Temperature,Memory"
 # Loop over power limit values o (-1) é sem powercap
 for limit in -1 2 5 10 25 50
     do
+
+    printf "\033[0;34mStarting limit %s \033[0m" "$limit"
+
     cd Utils/
     python3 raplCapUpdate.py $limit ../RAPL/main.c
     cd ..
