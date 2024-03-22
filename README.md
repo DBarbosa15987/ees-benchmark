@@ -1,4 +1,4 @@
-## On the Energy Efficiency of Sorting Algorithms
+## Exploring Energy Efficency and Performance of Python
 
 ### Authors
 * [Simão Cunha](https://github.com/simaocunha71)
@@ -13,7 +13,7 @@
 2. lm-sensors
 3. Powercap
 4. Raplcap
-5. python11
+5. python3.11
 6. pyperformance
 
 ### Setup Instructions
