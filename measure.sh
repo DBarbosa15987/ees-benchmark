@@ -1,6 +1,6 @@
 #!/bin/bash
 NTIMES=10
-PY_PATH="/home/diogo/miniconda3/bin/python3.11"
+PY_PATH="/usr/bin/python3.11"
 
 #Compile sensors wich will be used to calculate cool temperature
 cd RAPL
@@ -14,10 +14,8 @@ cd ..
 
 echo "Language,Program,PowerLimit,Package,Core,GPU,DRAM,Time,Temperature,Memory" > measurementsGlobal.csv
 
-# NOTE: TEST best powercaps for laptop fib with various powercaps
-
 # Loop over power limit values o (-1) é sem powercap
-for limit in -1 5 10 15 20 25 50 
+for limit in -1 5 10 15 20 25 50
     do
 
     printf "\033[0;34mStarting limit %s \033[0m" "$limit"

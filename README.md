@@ -2,24 +2,42 @@
 
 ### Authors
 * [Simão Cunha](https://github.com/simaocunha71)
-* [Luís Silva](https://github.com/LuisMPSilva01) 
+* [Luís Silva](https://github.com/LuisMPSilva01)
 * [João Saraiva]
+* [Diogo Barbosa]
+* [João Sousa]
 
 
-### Required libraries
+### Prerequisite Libraries
 1. RAPL
 2. lm-sensors
 3. Powercap
 4. Raplcap
+5. python11
+6. pyperformance
 
-### Setup
-In order to install all the required libraries, you should execute the script:
+### Setup Instructions
+To run these benchmarks, you need to install the pyperformance benchmarking suite by executing the following command:
 
-```sudo sh measureSetup.sh```
+```bash
+pip install pyperformance
+```
 
-Then, to generate the CSV file, execute the script:
+### Execution Steps
+To conduct the tests, select benchmarks from the available options provided by pyperformance listed here: [Pyperformance Benchmark List](https://pyperformance.readthedocs.io/benchmarks.html#available-benchmarks).
 
-```sh measure.sh```
+Add the chosen benchmarks to the `benchmarks_to_run` file.
+
+Afterwards, execute the benchmark script using the following command:
+
+```bash
+sh measure.sh
+```
+
+This script utilizes the `pyperformance -b` command to individually run each selected test with RAPL. The resulting measurements will be stored in `measurementsGlobal.csv`.
+
+> [!CAUTION]
+> In case adjustments are needed in the `measure.sh` script, you might have to modify the `PY_PATH` variable to match your system's specifications.
 
 ### Meaning of the CSV file columns
 * **Language** : Programming language of the sorting algorithm;
