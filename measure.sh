@@ -17,7 +17,7 @@ echo "Language,Program,PowerLimit,Package,Core,GPU,DRAM,Time,Temperature,Memory"
 # NOTE: TEST best powercaps for laptop fib with various powercaps
 
 # Loop over power limit values o (-1) é sem powercap
-for limit in -1 2 5 10 25 50
+for limit in -1 5 10 15 20 25 50 
     do
 
     printf "\033[0;34mStarting limit %s \033[0m" "$limit"
@@ -53,4 +53,4 @@ cd RAPL/
 make clean
 cd ..
 
-# sudo reboot
+sudo shutdown
