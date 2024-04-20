@@ -13,9 +13,9 @@
 #include "rapl.h"
 #include "sensors.h"
 
-#define TEMPERATURETHRESHOLD 43.0
+#define TEMPERATURETHRESHOLD 40.25
 #define VARIANCE 5
-#define WHATTSCAP -1
+#define WHATTSCAP 50
 #define MAX_STRING_LENGTH 500
 #define MAX_COMMAND_LENGTH 500
 #define MEASUREMENTS_FILE "measurements.csv"

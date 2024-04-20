@@ -1,6 +1,6 @@
 #!/bin/bash
 NTIMES=10
-PY_PATH="/usr/bin/python3.11"
+PY_PATH="/home/diogo/miniconda3/envs/pyperformance311/bin/python"
 
 #Compile sensors wich will be used to calculate cool temperature
 cd RAPL
