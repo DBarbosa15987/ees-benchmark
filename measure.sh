@@ -1,6 +1,13 @@
 #!/bin/bash
 NTIMES=10
-PY_PATH="/home/diogo/miniconda3/envs/pyperformance311/bin/python"
+CONDA_PATH="/home/diogo/miniconda3/envs/pyperformance"
+
+PYTHON_VERSION=(
+    "36"
+    "38"
+    "310"
+    "311"
+    )
 
 #Compile sensors wich will be used to calculate cool temperature
 cd RAPL
@@ -15,8 +22,7 @@ cd ..
 echo "Language,Program,PowerLimit,Package,Core,GPU,DRAM,Time,Temperature,Memory" > measurementsGlobal.csv
 
 # Loop over power limit values o (-1) é sem powercap
-for limit in -1 5 10 15 20 25 50
-    do
+for limit in -1 10; do
 
     printf "\033[0;34mStarting limit %s \033[0m" "$limit"
 
@@ -30,19 +36,22 @@ for limit in -1 5 10 15 20 25 50
     cd ..
 
     while read -r program; do
-        command_to_run="pyperformance run -b $program --python=$PY_PATH"
+        for py_version in "${PYTHON_VERSION[@]}"; do
+            PY_PATH="$CONDA_PATH$py_version/bin/python"
 
-	    echo -e "\nRunning $program\n"
-        sudo modprobe msr
-        sudo ./RAPL/main "$command_to_run" Python "$program" "$NTIMES"
+            command_to_run="pyperformance run -b $program --python=$PY_PATH"
 
-        # Specify the input file name
-        file="measurements.csv"
-        tail -n +2 "$file" >> measurementsGlobal.csv;
+            echo -e "\nRunning $program\n"
+            sudo modprobe msr
+            sudo ./RAPL/main "$command_to_run" "Python$py_version" "$program" "$NTIMES"
 
-        printf "\033[0;34mCooling down before next benchmark\033[0m"
-        sleep 60
+            # Specify the input file name
+            file="measurements.csv"
+            tail -n +2 "$file" >> measurementsGlobal.csv;
 
+            printf "\033[0;34mCooling down before next benchmark\033[0m"
+            sleep 60
+        done
     done < benches_to_run
 
 done
