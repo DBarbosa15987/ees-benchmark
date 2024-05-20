@@ -119,8 +119,6 @@ Python311, async_tree_cpu_io_mixed, -1,1257.667785644531250000, 1121.82940673828
 Python311, async_tree_cpu_io_mixed, -1,1254.716125488281250000, 1117.128356933593750000,  ,  , 67456, 63.2, 92796
 Python311, async_tree_cpu_io_mixed, -1,1256.158264160156250000, 1118.934387207031250000,  ,  , 67374, 62.0, 92840
 Python311, async_tree_cpu_io_mixed, -1,1256.493713378906250000, 1119.648559570312500000,  ,  , 67245, 63.0, 92740
-Python38, async_tree_cpu_io_mixed_tg, -1, error, error, error, error, error, error, error
-Python310, async_tree_cpu_io_mixed_tg, -1, error, error, error, error, error, error, error
 Python311, async_tree_cpu_io_mixed_tg, -1,1209.130249023437500000, 1074.640502929687500000,  ,  , 65033, 63.2, 96964
 Python311, async_tree_cpu_io_mixed_tg, -1,1208.758483886718750000, 1074.390686035156250000,  ,  , 65041, 66.8, 97064
 Python311, async_tree_cpu_io_mixed_tg, -1,1209.031982421875000000, 1074.554931640625000000,  ,  , 64982, 62.5, 97092
@@ -161,8 +159,6 @@ Python311, async_tree_io, -1,1837.566223144531250000, 1615.911682128906250000,  
 Python311, async_tree_io, -1,1904.623229980468750000, 1680.215637207031250000,  ,  , 103925, 73.2, 144516
 Python311, async_tree_io, -1,1840.336181640625000000, 1620.613586425781250000,  ,  , 102802, 62.8, 144416
 Python311, async_tree_io, -1,1838.871643066406250000, 1619.482116699218750000,  ,  , 102647, 62.2, 144372
-Python38, async_tree_io_tg, -1, error, error, error, error, error, error, error
-Python310, async_tree_io_tg, -1, error, error, error, error, error, error, error
 Python311, async_tree_io_tg, -1,1817.926757812500000000, 1594.863403320312500000,  ,  , 102074, 62.2, 147868
 Python311, async_tree_io_tg, -1,1810.515808105468750000, 1588.464599609375000000,  ,  , 102038, 60.5, 147876
 Python311, async_tree_io_tg, -1,1805.857666015625000000, 1583.637390136718750000,  ,  , 101928, 62.5, 147968
@@ -203,8 +199,6 @@ Python311, async_tree_memoization, -1,1025.105834960937500000, 906.9320678710937
 Python311, async_tree_memoization, -1,1023.375610351562500000, 905.010131835937500000,  ,  , 56074, 63.2, 95140
 Python311, async_tree_memoization, -1,1021.007263183593750000, 903.458618164062500000,  ,  , 55865, 61.5, 95100
 Python311, async_tree_memoization, -1,1027.367736816406250000, 910.364868164062500000,  ,  , 55887, 61.8, 95140
-Python38, async_tree_memoization_tg, -1, error, error, error, error, error, error, error
-Python310, async_tree_memoization_tg, -1, error, error, error, error, error, error, error
 Python311, async_tree_memoization_tg, -1,978.370605468750000000, 862.805541992187500000,  ,  , 53816, 66.8, 99128
 Python311, async_tree_memoization_tg, -1,976.366088867187500000, 861.491821289062500000,  ,  , 53848, 61.5, 99000
 Python311, async_tree_memoization_tg, -1,977.489501953125000000, 862.734802246093750000,  ,  , 53632, 67.0, 99000
@@ -215,8 +209,6 @@ Python311, async_tree_memoization_tg, -1,976.194396972656250000, 861.83117675781
 Python311, async_tree_memoization_tg, -1,972.401794433593750000, 858.408508300781250000,  ,  , 53513, 62.2, 99212
 Python311, async_tree_memoization_tg, -1,975.504394531250000000, 861.296875000000000000,  ,  , 53600, 61.8, 99120
 Python311, async_tree_memoization_tg, -1,980.643615722656250000, 865.543151855468750000,  ,  , 53680, 61.8, 99000
-Python38, async_tree_tg, -1, error, error, error, error, error, error, error
-Python310, async_tree_tg, -1, error, error, error, error, error, error, error
 Python311, async_tree_tg, -1,785.945556640625000000, -261448.621765136718750000,  ,  , 42661, 66.2, 93460
 Python311, async_tree_tg, -1,790.357299804687500000, 699.002075195312500000,  ,  , 42867, 62.5, 92968
 Python311, async_tree_tg, -1,789.811889648437500000, 698.635925292968750000,  ,  , 42854, 61.5, 93460

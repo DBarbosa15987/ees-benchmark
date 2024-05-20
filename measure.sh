@@ -3,7 +3,6 @@ NTIMES=10
 CONDA_PATH="/home/diogo/miniconda3/envs/pyperformance"
 
 PYTHON_VERSION=(
-    "36"
     "38"
     "310"
     "311"
@@ -22,7 +21,7 @@ cd ..
 echo "Language,Program,PowerLimit,Package,Core,GPU,DRAM,Time,Temperature,Memory" > measurementsGlobal.csv
 
 # Loop over power limit values o (-1) é sem powercap
-for limit in -1 10; do
+for limit in 10; do
 
     printf "\033[0;34mStarting limit %s \033[0m" "$limit"
 
@@ -49,8 +48,8 @@ for limit in -1 10; do
             file="measurements.csv"
             tail -n +2 "$file" >> measurementsGlobal.csv;
 
-            printf "\033[0;34mCooling down before next benchmark\033[0m"
-            sleep 60
+            # printf "\033[0;34mCooling down before next benchmark\033[0m"
+            # sleep 60
         done
     done < benches_to_run
 
@@ -59,5 +58,7 @@ done
 cd RAPL/
 make clean
 cd ..
+
+date > finito.txt
 
 sudo shutdown
