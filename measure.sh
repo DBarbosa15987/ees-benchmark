@@ -1,12 +1,13 @@
 #!/bin/bash
 NTIMES=10
-CONDA_PATH="/home/diogo/miniconda3/envs/pyperformance"
+# this is the path to
+PYTHON_PATH_BASE="/usr/bin/python"
 
 PYTHON_VERSION=(
-    "38"
-    "310"
-    "311"
-    )
+    "3.8"
+    "3.10"
+    "3.11"
+)
 
 #Compile sensors wich will be used to calculate cool temperature
 cd RAPL
@@ -36,7 +37,7 @@ for limit in 10; do
 
     while read -r program; do
         for py_version in "${PYTHON_VERSION[@]}"; do
-            PY_PATH="$CONDA_PATH$py_version/bin/python"
+            PY_PATH="$PYTHON_PATH_BASE$py_version/bin/python"
 
             command_to_run="pyperformance run -b $program --python=$PY_PATH"
 
@@ -48,8 +49,8 @@ for limit in 10; do
             file="measurements.csv"
             tail -n +2 "$file" >> measurementsGlobal.csv;
 
-            # printf "\033[0;34mCooling down before next benchmark\033[0m"
-            # sleep 60
+            printf "\033[0;34mCooling down before next benchmark\033[0m"
+            sleep 60
         done
     done < benches_to_run
 

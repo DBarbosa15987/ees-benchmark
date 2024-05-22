@@ -13,7 +13,7 @@
 2. lm-sensors
 3. Powercap
 4. Raplcap
-5. python3.11
+5. python3
 6. pyperformance
 
 ### Setup Instructions
@@ -37,7 +37,8 @@ sh measure.sh
 This script utilizes the `pyperformance -b` command to individually run each selected test with RAPL. The resulting measurements will be stored in `measurementsGlobal.csv`.
 
 > [!CAUTION]
-> In case adjustments are needed in the `measure.sh` script, you might have to modify the `PY_PATH` variable to match your system's specifications.
+> In case adjustments are needed in the `measure.sh` script, you might have to modify the `PY_PATH_BASE` variable to match your system's specifications.
+> The versions specified in the `PYTHON_VERSION` should also be changed to suit your target versions to test.
 
 ### Meaning of the CSV file columns
 * **Language** : Programming language of the sorting algorithm;
